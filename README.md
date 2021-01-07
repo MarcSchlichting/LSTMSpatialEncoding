@@ -17,3 +17,23 @@ doi = {10.2514/6.2021-1860},
 URL = {https://arc.aiaa.org/doi/abs/10.2514/6.2021-1860},
 }
 ```
+
+### Installation
+The setup described here has mainly been tested on Windows and on Linux-based systems. A Python installation (as of January 2021, the newest version that could be used is Python 3.8.7) is required. The following Python packages are required (pip is recommended for installation): **numpy** (>=1.19.5), **scipy** (>=1.6.0), **gym** (only basic installation, >=0.18), **PyTorch** (see [here](https://pytorch.org/) for installation notes, CUDA is not used in the implementatin so far, >=1.7.1). Depending on the platform, other packages such as Visual Studio Build Tools (maybe required for gym) need to be installed. Test that all packages are are properly installed before proceding with the next step.
+
+Before beginning with the training of the policy, the custom environment (located in the *drone-sim2d* folder) must be installed. For this purpose navigate into the previously mentioned folder:
+```
+cd drone-sim2d
+```
+Now use pip to install the custom environment:
+```
+pip install -e .
+```
+If no error occurs, the installation is successfully completed.
+
+### Usage
+All parameters can be changed within the *main* function of the *ppo.py* file. The overall structure of a typical PPO implementation has been adapted to work with mutli-agent environments. The training can be started using:
+```
+python3 ppo.py
+```
+The *logs* folders will contain the log files for each run. For each run, a unique timestamp is created which will be used for all log files and model names. Within the *logs* folder, two files are created: One parameter file that contains relevant parameters for each run and a second file that contains the average episode length as well as the average reward per log interval. The models are saved to the *models* folder after a specified number of training episodes (as defined in the beginning of the main function). 
