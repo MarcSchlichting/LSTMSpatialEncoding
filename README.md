@@ -32,8 +32,8 @@ pip install -e .
 If no error occurs, the installation is successfully completed.
 
 ### Usage
-All parameters can be changed within the *main* function of the *ppo.py* file. The overall structure of a typical PPO implementation has been adapted to work with mutli-agent environments. The training can be started using:
+All parameters can be changed within the *main* function of the *training.py* file. The overall structure of a typical PPO implementation has been adapted to work with mutli-agent environments. The training can be started using:
 ```
-python3 ppo.py
+python3 training.py
 ```
 The *logs* folders will contain the log files for each run. For each run, a unique timestamp is created which will be used for all log files and model names. Within the *logs* folder, two files are created: One parameter file that contains relevant parameters for each run and a second file that contains the average episode length as well as the average reward per log interval. The models are saved to the *models* folder after a specified number of training episodes (as defined in the beginning of the main function). 

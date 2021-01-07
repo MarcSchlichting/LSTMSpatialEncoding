@@ -1,0 +1,7 @@
+README.md
+setup.py
+drone_sim.egg-info/PKG-INFO
+drone_sim.egg-info/SOURCES.txt
+drone_sim.egg-info/dependency_links.txt
+drone_sim.egg-info/requires.txt
+drone_sim.egg-info/top_level.txt
