@@ -31,9 +31,22 @@ pip install -e .
 ```
 If no error occurs, the installation is successfully completed.
 
-### Usage
+### Usage for Training
 All parameters can be changed within the *main* function of the *training.py* file. The overall structure of a typical PPO implementation has been adapted to work with mutli-agent environments. The training can be started using:
 ```
 python3 training.py
 ```
 The *logs* folders will contain the log files for each run. For each run, a unique timestamp is created which will be used for all log files and model names. Within the *logs* folder, two files are created: One parameter file that contains relevant parameters for each run and a second file that contains the average episode length as well as the average reward per log interval. The models are saved to the *models* folder after a specified number of training episodes (as defined in the beginning of the main function). 
+
+### Usage for Evaluation
+For the creation of trajectories, *evaluation.py* contains a modified version of the *training.py* file which is only intended to be used to create trajectories from a trained policy. The environment has been slightly adapted for evaluation purposes as well, so the first step is to activate the evaluation environment:
+```
+cd drone-sim2d-eval
+pip install -e .
+cd ..
+```
+The file *positions_destinations.txt* contains the initial positions (first two columns) and the final positions (last two columns) of all vehicles. Each row is one vehicle. The simulation is called using the following command:
+```
+python3 evaluation.py PPO_Continuous_drones2d-v0_91600_1564466648
+```
+where *PPO_Continuous_drones2d-v0_91600_1564466648* is the name of the policy. If no policy is specified, a default policy which is located in the models folder (trained for 91,600 training episodes) will be used. The output of the simulation will be found in the trajectories folder. For each vehicle, one *.txt* file is created that contains the coordinates after each time step. 
