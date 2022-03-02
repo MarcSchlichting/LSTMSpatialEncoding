@@ -46,7 +46,7 @@ class ActorCritic(nn.Module):
         
     ###add actor definition
     def actor(self,x,y):
-        x = torch.FloatTensor(x).view(-1,1,3)
+        x = torch.FloatTensor(np.array(x)).view(-1,1,3)
         x, _ = self.lstm1_a(x,(self.h0_a,self.c0_a))
         x = x[-1,:,:]
         x = x.view(-1)
@@ -60,7 +60,7 @@ class ActorCritic(nn.Module):
         return z
 
     def critic(self,x,y):
-        x = torch.FloatTensor(x).view(-1,1,3)
+        x = torch.FloatTensor(np.array(x)).view(-1,1,3)
         x, _ = self.lstm1_c(x,(self.h0_c,self.c0_c))
         x = x[-1,:,:]
         x = x.view(-1)
