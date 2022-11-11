@@ -308,7 +308,7 @@ def main():
     # training loop
     for i_episode in range(1, max_episodes+1):
         agents = np.random.randint(low=1,high=5)
-        state = env.reset(amount = agents,xrange_init=xrange_init,yrange_init=yrange_init,xrange_target=xrange_target,yrange_target=yrange_target,eps_arr=1)
+        state,_ = env.reset(amount = agents,xrange_init=xrange_init,yrange_init=yrange_init,xrange_target=xrange_target,yrange_target=yrange_target,eps_arr=1)
         state = handler.state_handler(state)
         handler.agentmemory.delete_memory()     #delete old memory
         handler.agentmemory.create_memory(len(state))
@@ -318,6 +318,7 @@ def main():
             # Running policy_old:
             action = handler.select_action(state,ppo.policy_old.actor)       #for use with multi-agent environment
             response = env.step(action)
+            # response = [response[0],response[1],response[2],response[4]]
             state,reward,done = handler.response_eval(response)
 
             # Saving reward:

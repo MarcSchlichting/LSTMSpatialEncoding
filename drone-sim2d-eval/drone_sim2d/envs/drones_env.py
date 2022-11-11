@@ -108,7 +108,7 @@ class DronesEnv(gym.Env):
         return output_vector
 
 
-    def reset(self,amount=20,xrange_init=[-100,100],yrange_init=[-100,100],xrange_target=[-100,100],yrange_target=[-100,100],min_distance=10,delta_t=1,eps_arr_abort=1.5,eps_cav=3,delta_cav=6,eps_arr=1.1,delta_arr=15,phi_segments=np.linspace(-np.pi,np.pi,num=25),r_segments=np.array([0,3,4,5,7,10,15,20]),max_stepcount=1000,arr_rew_amount=1000):
+    def reset(self,amount=20,xrange_init=[-100,100],yrange_init=[-100,100],xrange_target=[-100,100],yrange_target=[-100,100],min_distance=10,delta_t=1,eps_arr_abort=1.5,eps_cav=3,delta_cav=6,eps_arr=1.1,delta_arr=15,phi_segments=np.linspace(-np.pi,np.pi,num=25),r_segments=np.array([0,3,4,5,7,10,15,20]),max_stepcount=1000,arr_rew_amount=1000,seed=None,options={}):
         '''set hyper_parameters'''
         self.amount = amount
         if self.amount == -1:
