@@ -4,7 +4,7 @@ The code can be used as starting point for other multi-agent environments (excha
 or using the code for own experiments. The implementation is based on Open AI's Gym and PyTorch. 
 
 
-The paper can be found using this [link](https://arc.aiaa.org/doi/10.2514/6.2021-1860). In case you use this work for your own research, please cite as:
+The paper can be found using this [link](https://arc.aiaa.org/doi/full/10.2514/1.G006129). In case you use this work for your own research, please cite as:
 
 ```
 @article{schlichting2022long,
