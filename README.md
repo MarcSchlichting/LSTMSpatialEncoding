@@ -1,7 +1,7 @@
 # LSTM-Based Spatial Encoding: Explainable Path Planning for Time-Variant Multi-Agent Systems 
-This repository contains the source code used for the LSTM-based multi-agent path planning method described in *LSTM-Based Spatial Encoding: Explainable Path Planning for Time-Variant Multi-Agent Systems* (Schlichting et al., 2021).
+This repository contains the source code used for the LSTM-based multi-agent path planning method described in *Long Short-Term Memory for Spatial Encoding in Multi-Agent Path Planning* (Schlichting et al., 2022).
 The code can be used as starting point for other multi-agent environments (exchanging the gym environment), following ideas outlined in the paper regarding saftey guarantees, 
-or using the code for own experiments. The implementation is based on Open AI's Gym and PyTorch. The files along descriptions how to use them will be uploaded in time for the AIAA SciTech 2021 Conference.
+or using the code for own experiments. The implementation is based on Open AI's Gym and PyTorch. 
 
 
 The paper can be found using this [link](https://arc.aiaa.org/doi/10.2514/6.2021-1860). In case you use this work for your own research, please cite as:
